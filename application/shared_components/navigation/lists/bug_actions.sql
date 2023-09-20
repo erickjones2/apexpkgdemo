@@ -1,4 +1,4 @@
--- 09/16/2023 a
+-- 09/20/2023 a
 prompt --application/shared_components/navigation/lists/bug_actions
 begin
 wwv_flow_api.create_list(
