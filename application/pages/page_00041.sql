@@ -23,7 +23,8 @@ wwv_flow_api.create_page(
 '<p><b>Disabling Access Control</b> means that access to the application and all of its features including Administration are open to any user who can authenticate to the application.</p>',
 '<br>',
 '<p>Note: Irrespective of whether Access Control is enabled or disabled, a user still has to authenticate successfully into the application.</p>'))
-,p_last_upd_yyyymmddhh24miss=>'20171009062402'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20240801102708'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(3802373831987924339)
@@ -57,7 +58,6 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(3802374253890924340)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'CANCEL'
 ,p_button_action=>'REDIRECT_PAGE'
 ,p_button_template_options=>'#DEFAULT#'
@@ -70,7 +70,6 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(3802374040211924339)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(9594180850946618485)
 ,p_button_name=>'APPLY_CHANGES'
 ,p_button_action=>'DEFINED_BY_DA'
 ,p_button_template_options=>'#DEFAULT#'

@@ -43,7 +43,7 @@ wwv_flow_api.create_flow(
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
 ,p_flow_version=>'3.1.5'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
-,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
+,p_flow_unavailable_text=>'This application is currently unavailable at this time. 351'
 ,p_exact_substitutions_only=>'Y'
 ,p_browser_cache=>'N'
 ,p_browser_frame=>'D'
@@ -63,7 +63,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_04=>'APP_NAME'
 ,p_substitution_value_04=>'Bug Tracker'
 ,p_last_updated_by=>'ADMIN'
-,p_last_upd_yyyymmddhh24miss=>'20190619130148'
+,p_last_upd_yyyymmddhh24miss=>'20241018130938'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );

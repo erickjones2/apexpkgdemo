@@ -431,6 +431,7 @@ wwv_flow_api.create_plugin(
 ,p_help_text=>'<p>This plugin draws horizontal bar charts containing labels, values and even icons</p>'
 ,p_version_identifier=>'5.0.1'
 ,p_about_url=>'http://apex.oracle.com/plugins'
+,p_plugin_comment=>'test1'
 ,p_files_version=>16
 );
 wwv_flow_api.create_plugin_attribute(
@@ -450,6 +451,7 @@ wwv_flow_api.create_plugin_attribute(
 ,p_depending_on_expression=>'ICON'
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'Select the icon type to be displayed.'
+,p_attribute_comment=>'test'
 );
 wwv_flow_api.create_plugin_attr_value(
  p_id=>wwv_flow_api.id(644020388941795956)

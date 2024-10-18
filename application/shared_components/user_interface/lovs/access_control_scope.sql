@@ -8,7 +8,7 @@ wwv_flow_api.create_list_of_values(
 wwv_flow_api.create_static_lov_data(
  p_id=>wwv_flow_api.id(2570218554848438630)
 ,p_lov_disp_sequence=>1
-,p_lov_disp_value=>'Reader access for any authenticated user'
+,p_lov_disp_value=>'Reader access for any authenticated user 53'
 ,p_lov_return_value=>'PUBLIC_READONLY'
 );
 wwv_flow_api.create_static_lov_data(

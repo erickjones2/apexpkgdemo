@@ -30,7 +30,8 @@ wwv_flow_api.create_page(
 '.apex-item-yes-no {white-space:pre;}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_overwrite_navigation_list=>'Y'
-,p_last_upd_yyyymmddhh24miss=>'20180223141500'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20240801102708'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(934809091411867930)

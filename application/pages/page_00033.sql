@@ -18,8 +18,8 @@ wwv_flow_api.create_page(
 '<p>',
 '    View an individual user''s bug assignments. Mouse over and click within each section to view more details about individual items.',
 '</p>'))
-,p_last_updated_by=>'HILARY'
-,p_last_upd_yyyymmddhh24miss=>'20190314064827'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20241018125349'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(39449330677989466)

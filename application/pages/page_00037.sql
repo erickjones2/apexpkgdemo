@@ -12,8 +12,8 @@ wwv_flow_api.create_page(
 ,p_step_template=>wwv_flow_api.id(1225652808464288287)
 ,p_page_template_options=>'#DEFAULT#'
 ,p_help_text=>'Use this page to view metrics on all of your open bugs.'
-,p_last_updated_by=>'HILARY'
-,p_last_upd_yyyymmddhh24miss=>'20190314064827'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20241018125349'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(801137549778223275)
