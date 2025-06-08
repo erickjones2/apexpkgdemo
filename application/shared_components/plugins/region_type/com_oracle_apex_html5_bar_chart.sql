@@ -1,3 +1,4 @@
+-- 06/08/2025 chg 1
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_html5_bar_chart
 begin
 wwv_flow_api.create_plugin(
