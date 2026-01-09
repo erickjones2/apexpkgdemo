@@ -15,7 +15,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(1225713903681309706)
 ,p_name=>'Application Navigation'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>40668642
+,p_version_scn=>40695131
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(1225714164232309711)
@@ -28,7 +28,7 @@ wwv_flow_imp_shared.create_list_item(
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(1225714011828309709)
 ,p_list_item_display_sequence=>10
-,p_list_item_link_text=>'Dashboard 225'
+,p_list_item_link_text=>'Dashboard 226'
 ,p_list_item_link_target=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.::::'
 ,p_parent_list_item_id=>wwv_flow_imp.id(1225714164232309711)
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
