@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/links_list
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1225700021233288336)
+--   Manifest
+--     REGION TEMPLATE: LINKS_LIST
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1225700021233288336)
 ,p_list_template_current=>'<li class="t-LinksList-item is-current #A03#"><a href="#LINK#" class="t-LinksList-link" #A02#><span class="t-LinksList-icon"><span class="t-Icon #ICON_CSS_CLASSES#"></span></span><span class="t-LinksList-label">#TEXT#</span><span class="t-LinksList-b'
 ||'adge">#A01#</span></a></li>'
 ,p_list_template_noncurrent=>'<li class="t-LinksList-item #A03#"><a href="#LINK#" class="t-LinksList-link" #A02#><span class="t-LinksList-icon"><span class="t-Icon #ICON_CSS_CLASSES#"></span></span><span class="t-LinksList-label">#TEXT#</span><span class="t-LinksList-badge">#A01#'
@@ -26,5 +37,6 @@ wwv_flow_api.create_list_template(
 ,p_a02_label=>'Link Attributes'
 ,p_a03_label=>'List Item CSS Classes'
 );
+wwv_flow_imp.component_end;
 end;
 /

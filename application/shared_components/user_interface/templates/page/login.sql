@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/page/login
 begin
-wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(1225663079474288300)
+--   Manifest
+--     TEMPLATE: LOGIN
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_template(
+ p_id=>wwv_flow_imp.id(1225663079474288300)
 ,p_theme_id=>42
 ,p_name=>'Login'
 ,p_internal_name=>'LOGIN'
@@ -126,24 +137,30 @@ wwv_flow_api.create_template(
 ,p_dialog_js_close_code=>'apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);'
 ,p_dialog_js_cancel_code=>'apex.navigation.dialog.cancel(#IS_MODAL#);'
 ,p_dialog_browser_frame=>'MODAL'
-,p_translate_this_template=>'N'
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517169832917598734)
-,p_page_template_id=>wwv_flow_api.id(1225663079474288300)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517169832917598734)
+,p_page_template_id=>wwv_flow_imp.id(1225663079474288300)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>true
+,p_has_button_support=>true
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517170356057598734)
-,p_page_template_id=>wwv_flow_api.id(1225663079474288300)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517170356057598734)
+,p_page_template_id=>wwv_flow_imp.id(1225663079474288300)
 ,p_name=>'Body Header'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
+wwv_flow_imp.component_end;
 end;
 /

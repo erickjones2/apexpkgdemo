@@ -1,52 +1,64 @@
 prompt --application/pages/page_groups
 begin
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141252046817827)
+--   Manifest
+--     PAGE GROUPS: 100
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141252046817827)
 ,p_group_name=>'ACL'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141354470818444)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141354470818444)
 ,p_group_name=>'Administration'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2509222245997328767)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2509222245997328767)
 ,p_group_name=>'Assignees'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141455855818868)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141455855818868)
 ,p_group_name=>'Bugs'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2509247931274636702)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2509247931274636702)
 ,p_group_name=>'Deprecated'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141828975820570)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141828975820570)
 ,p_group_name=>'Help'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141727936820240)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141727936820240)
 ,p_group_name=>'Home'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141659318819907)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141659318819907)
 ,p_group_name=>'Login'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506141558280819568)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506141558280819568)
 ,p_group_name=>'Mobile'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2509088058952367312)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2509088058952367312)
 ,p_group_name=>'Other'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2506150059449829428)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2506150059449829428)
 ,p_group_name=>'Products'
 );
-wwv_flow_api.create_page_group(
- p_id=>wwv_flow_api.id(2508162743716731820)
+wwv_flow_imp_page.create_page_group(
+ p_id=>wwv_flow_imp.id(2508162743716731820)
 ,p_group_name=>'Reports'
 );
+wwv_flow_imp.component_end;
 end;
 /

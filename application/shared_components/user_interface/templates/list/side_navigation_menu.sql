@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/side_navigation_menu
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1706238107430397752)
+--   Manifest
+--     REGION TEMPLATE: SIDE_NAVIGATION_MENU
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1706238107430397752)
 ,p_list_template_current=>'<li data-current="true" data-id="#A01#" data-disabled="#A02#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_noncurrent=>'<li data-id="#A01#" data-disabled="#A02#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_name=>'Side Navigation Menu'
@@ -27,5 +38,6 @@ wwv_flow_api.create_list_template(
 ,p_a02_label=>'Disabled True/False'
 ,p_a04_label=>'Title'
 );
+wwv_flow_imp.component_end;
 end;
 /

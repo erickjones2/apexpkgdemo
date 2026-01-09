@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/top_navigation_menu
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1706238479023397754)
+--   Manifest
+--     REGION TEMPLATE: TOP_NAVIGATION_MENU
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1706238479023397754)
 ,p_list_template_current=>'<li data-current="true" data-id="#A01#" data-disabled="#A02#" data-hide="#A03#" data-shortcut="#A05#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_noncurrent=>'<li data-id="#A01#" data-disabled="#A02#" data-hide="#A03#" data-shortcut="#A05#" data-icon="#ICON_CSS_CLASSES#"><a href="#LINK#" title="#A04#">#TEXT_ESC_SC#</a></li>'
 ,p_list_template_name=>'Top Navigation Menu'
@@ -41,5 +52,6 @@ wwv_flow_api.create_list_template(
 ,p_a04_label=>'Title Attribute'
 ,p_a05_label=>'Shortcut Key'
 );
+wwv_flow_imp.component_end;
 end;
 /

@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/report/media_list
 begin
-wwv_flow_api.create_row_template(
- p_id=>wwv_flow_api.id(707193968701263941)
+--   Manifest
+--     ROW TEMPLATE: MEDIA_LIST
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_row_template(
+ p_id=>wwv_flow_imp.id(707193968701263941)
 ,p_row_template_name=>'Media List'
 ,p_internal_name=>'MEDIA_LIST'
 ,p_row_template1=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -52,5 +63,6 @@ wwv_flow_api.create_row_template(
 ,p_translate_this_template=>'N'
 ,p_row_template_comment=>' (SELECT link_text, link_target, detail1, detail2, last_modified)'
 );
+wwv_flow_imp.component_end;
 end;
 /

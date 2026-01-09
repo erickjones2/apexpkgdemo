@@ -1,38 +1,42 @@
 prompt --application/shared_components/globalization/messages
 begin
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2368098428373812832)
+--   Manifest
+--     MESSAGES: 100
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2368098428373812832)
 ,p_name=>'1_DAY_LEFT'
 ,p_message_text=>'1 Day Left'
+,p_version_scn=>16973732
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4453785536799935556)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4453785536799935556)
 ,p_name=>'ABOUT_THIS_APPLICATION'
 ,p_message_text=>'About this Application'
+,p_version_scn=>16973733
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575418150943259150)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575418150943259150)
 ,p_name=>'ABOUT_TO_CREATE'
 ,p_message_text=>'Please confirm adding the following %0 <strong>%1</strong> user(s) to your access control list.'
+,p_version_scn=>16973733
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2620008730476508249)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2620008730476508249)
 ,p_name=>'ABOUT_TO_CREATE_WITH_INVALIDS'
 ,p_message_text=>'Please confirm adding the following %0 <strong>%1</strong> user(s) to your access control list. Note that %2 string(s) were invalid usernames.'
+,p_version_scn=>16973733
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4386900955023944696)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4386900955023944696)
 ,p_name=>'ACCESS_CONTROL_INFO'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>When Access Control is enabled, Administrators have the ability to restrict access to certain application features, for authenticated users. Bug Tracker supports the following 3 access levels; Reader, Contributor and Administrator.  <strong>Reader'
@@ -40,17 +44,16 @@ wwv_flow_api.create_message(
 '  <strong>Contributors</strong> can create, edit, delete and view reports.  <strong>Administrators</strong>, in addition to Contributor''s capability, can also perform Bug Tracker administration, including configuration of access control, exporting, a'
 ||'nd installing or uninstalling sample data.</p> ',
 ''))
+,p_version_scn=>16973733
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(1421387544816137320)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(1421387544816137320)
 ,p_name=>'ACCESS_CONTROL_IS_DISABLED'
 ,p_message_text=>'Access control is disabled for this application.  Please enable before using in a production capacity.'
+,p_version_scn=>16973733
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4380132536638086411)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4380132536638086411)
 ,p_name=>'ACL_CONFIGURATION_INFO'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p><strong>Enabling Access Control</strong> allows the application and its features to be controlled by the <strong>Access Control List</strong>, as defined by the application administrator. This application has 3 access levels available that can be '
@@ -63,165 +66,133 @@ wwv_flow_api.create_message(
 '<p><b>Disabling Access Control</b> means that access to the application and all of its features including Administration are open to any user who can authenticate to the application.</p>',
 '<br>',
 '<p>Note: Irrespective of whether Access Control is enabled or disabled, a user still has to authenticate successfully into the application.</p>'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2719847430687814187)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2719847430687814187)
 ,p_name=>'ACL_DISABLED'
 ,p_message_text=>'<p>All users are currently <strong>Administrators</strong>. Please enable Access Control to restrict user access to this application.</p>'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2719847235000812157)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2719847235000812157)
 ,p_name=>'ACL_ENABLED'
 ,p_message_text=>'<p>Only users defined in the Access Control List have access to this application.</p>'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2719847038235810701)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2719847038235810701)
 ,p_name=>'ACL_PUBLIC_CONTRIBUTE'
 ,p_message_text=>'<p>All authenticated users have <strong>Reader</strong> and <strong>Contributor</strong> access.</p><p>Administrators are restricted by the Access Control List.</p>'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2719846841901808944)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2719846841901808944)
 ,p_name=>'ACL_PUBLIC_READONLY'
 ,p_message_text=>'<p>All authenticated users have <strong>Reader</strong> access.</p><p>Contributors and Administrators are restricted by the Access Control List.</p>'
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4453784828834933267)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4453784828834933267)
 ,p_name=>'ADDITIONAL_INFORMATION'
 ,p_message_text=>'Additional Information'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4401457038562749762)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4401457038562749762)
 ,p_name=>'ADMINISTRATION'
 ,p_message_text=>'Administration'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575418645120261915)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575418645120261915)
 ,p_name=>'ALREADY_IN_ACL'
 ,p_message_text=>'User is already in Access Control List'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2719846647293806530)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2719846647293806530)
 ,p_name=>'ANY_AUTHENTICATED_USER'
 ,p_message_text=>'Any Authenticated User'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(6366571679567630388)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(6366571679567630388)
 ,p_name=>'APP_NOT_ASSIGNED_TEXT'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Not Assigned'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2720298655688168996)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2720298655688168996)
 ,p_name=>'AUTHENTICATION_REQUIRED_PAGES'
 ,p_message_text=>'Login Required Pages'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575419632396267819)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575419632396267819)
 ,p_name=>'BAU_EMAIL_INSTRUCTIONS'
 ,p_message_text=>'Enter or copy and paste email addresses separated by commas, semicolons, or new lines. Note that if you copy and paste email addresses from email messages, extraneous text will be filtered out. All email users provided will be added as the selected r'
 ||'ole. Existing or duplicate email addresses will be ignored.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575419829593269056)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575419829593269056)
 ,p_name=>'BAU_STRING_INSTRUCTIONS'
 ,p_message_text=>'Enter or copy and paste usernames separated by commas, semicolons, or whitespace. All usernames provided will be added as the selected role. Existing or duplicate usernames will be ignored.'
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(6323654603948388381)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(6323654603948388381)
 ,p_name=>'CHANGE_LOG_MESSAGE'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Cannot Update or Delete the System generated change log information.'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2368100242810821357)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2368100242810821357)
 ,p_name=>'DAYS_LEFT'
 ,p_message_text=>'%0 days left'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2368099950142817946)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2368099950142817946)
 ,p_name=>'DAYS_OVERDUE'
 ,p_message_text=>'%0 days overdue'
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575418841885263342)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575418841885263342)
 ,p_name=>'DUPLICATE_USER'
 ,p_message_text=>'Duplicate user in list'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2700690033879452328)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2700690033879452328)
 ,p_name=>'EMAIL_USERNAME_FORMAT_MSG'
 ,p_message_text=>'This application is currently using an <strong>email address</strong> username format (e.g. xyz@xyz.com). <a href="f?p=%0:%1:%2:">Change Username Format</a>'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4453785031258933944)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4453785031258933944)
 ,p_name=>'FEATURES'
 ,p_message_text=>'Features'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4453785234375934807)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4453785234375934807)
 ,p_name=>'GETTING_STARTED'
 ,p_message_text=>'Getting Started'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(3673991837042164943)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(3673991837042164943)
 ,p_name=>'HELP'
 ,p_message_text=>'Help'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2624255139693470745)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2624255139693470745)
 ,p_name=>'HELP_ABOUT'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="aboutApp">',
@@ -240,9 +211,10 @@ wwv_flow_api.create_message(
 '	Bug Tracker gives all users an easy way to view bugs, based on a variety of selection filters.',
 '</p>',
 '</div>'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2624255557796477547)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2624255557796477547)
 ,p_name=>'HELP_FEATURES'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="textRegion">',
@@ -257,9 +229,10 @@ wwv_flow_api.create_message(
 '	<li>Timezone Support</li>',
 '</ul>',
 '</div>'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2624255331713474465)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2624255331713474465)
 ,p_name=>'HELP_GETTING_STARTED'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="textRegion">',
@@ -286,9 +259,10 @@ wwv_flow_api.create_message(
 '	<li>Create a bug for your product, including the version where the bug was found and the version when the bug should be fixed</li>',
 '</ul>',
 '</div>'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2624254653279464467)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2624254653279464467)
 ,p_name=>'HELP_SIDEBAR'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<h1 class="appNameHeader">',
@@ -309,9 +283,10 @@ wwv_flow_api.create_message(
 '        <span class="vValue">%5 </span>',
 '    </li>',
 '</ul>'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2624254948319466683)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2624254948319466683)
 ,p_name=>'HELP_SUPPORT'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="textRegion">',
@@ -319,177 +294,198 @@ wwv_flow_api.create_message(
 '<p>If you have questions, ask them on the <a href="%0" target="_blank">%1</a>.',
 '</p>',
 '</div>'))
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575418447924260592)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575418447924260592)
 ,p_name=>'INVALID_USERS_NOT_CREATED'
 ,p_message_text=>'Note that %0 string(s) were invalid usernames.'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10394560783728427328)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10394560783728427328)
 ,p_name=>'MESSAGE_101'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Click for Popup'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10412922903534288149)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10412922903534288149)
 ,p_name=>'MESSAGE_102'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Assigned to user'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10412924780116290765)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10412924780116290765)
 ,p_name=>'MESSAGE_103'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Assigned to group '
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10418121608635463085)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10418121608635463085)
 ,p_name=>'MESSAGE_104'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Cleared Assigned to Information.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10446234095178470761)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10446234095178470761)
 ,p_name=>'MESSAGE_105'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0 is assigned to your login (%1) with priority %2.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10446246282196504885)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10446246282196504885)
 ,p_name=>'MESSAGE_106'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10446251398387528477)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10446251398387528477)
 ,p_name=>'MESSAGE_107'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0 which is assigned to you (%1) has been moved to higher priority %2 from %3.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10446252204620530223)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10446252204620530223)
 ,p_name=>'MESSAGE_108'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0 which is assigned to you (%1) has been moved to lower priority %2 from %3.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10506324399291279510)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10506324399291279510)
 ,p_name=>'MESSAGE_109'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Fixed issue in version #[%0] build #[%1].'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10536408190532700002)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10536408190532700002)
 ,p_name=>'MESSAGE_110'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Issue failed testing, need to be reworked.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10546350296877027971)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10546350296877027971)
 ,p_name=>'MESSAGE_111'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug is Closed.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10546353608305031234)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10546353608305031234)
 ,p_name=>'MESSAGE_112'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug is Reopened.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10600524783840912354)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10600524783840912354)
 ,p_name=>'MESSAGE_113'
 ,p_message_language=>'en-us'
 ,p_message_text=>'The status of the bug %0 is changed to %1. {Business rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10600638189615055954)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10600638189615055954)
 ,p_name=>'MESSAGE_114'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Status of the bug #%0 changed from %1 to %2.{Business rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10600684890748113110)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10600684890748113110)
 ,p_name=>'MESSAGE_115'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0 is assigned to your login (%1) with priority %2.{Business Rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10603207708426687287)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10603207708426687287)
 ,p_name=>'MESSAGE_116'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Bug #%0 status changed.(Business Rule)'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10603545782547436776)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10603545782547436776)
 ,p_name=>'MESSAGE_117'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Sent Email Notification on Status Change. {Business Rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10603659595724592028)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10603659595724592028)
 ,p_name=>'MESSAGE_118'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Changed status from %0 to %1. {Business Rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10603754995611733871)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10603754995611733871)
 ,p_name=>'MESSAGE_119'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Assigned to user. {Business Rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10603757508425737594)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10603757508425737594)
 ,p_name=>'MESSAGE_120'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Assigned to Group. {Business Rule}'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10849944704352147252)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10849944704352147252)
 ,p_name=>'MESSAGE_121'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Your password has been reset and the new password is %0.'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(10849955976956186573)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(10849955976956186573)
 ,p_name=>'MESSAGE_122'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Your Account Information'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(9599312550671855155)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(9599312550671855155)
 ,p_name=>'MESSAGE_123'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Product'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(9599312958983857542)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(9599312958983857542)
 ,p_name=>'MESSAGE_124'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Total'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(9599871454637774380)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(9599871454637774380)
 ,p_name=>'MESSAGE_125'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Version'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(9599885054562868986)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(9599885054562868986)
 ,p_name=>'MESSAGE_126'
 ,p_message_language=>'en-us'
 ,p_message_text=>'Category'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(8048288415560778478)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(8048288415560778478)
 ,p_name=>'MESSAGE_127'
 ,p_message_language=>'en-us'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -502,9 +498,10 @@ wwv_flow_api.create_message(
 'Thank You',
 'Bug Tracker',
 '- Administrator.'))
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(8048297101539812332)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(8048297101539812332)
 ,p_name=>'MESSAGE_128'
 ,p_message_language=>'en-us'
 ,p_message_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -516,121 +513,110 @@ wwv_flow_api.create_message(
 'Thank You ',
 'Bug Tracker ',
 '- Administrator.'))
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575419237141265540)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575419237141265540)
 ,p_name=>'MISSING_AT_SIGN'
 ,p_message_text=>'Missing @ sign'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575419435200266526)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575419435200266526)
 ,p_name=>'MISSING_DOT'
 ,p_message_text=>'Missing dot'
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(4401456540162740785)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(4401456540162740785)
 ,p_name=>'MOBILE'
 ,p_message_text=>'Mobile'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427963142644642878)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427963142644642878)
 ,p_name=>'N_DAY'
 ,p_message_text=>'%0 day'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427963341350643566)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427963341350643566)
 ,p_name=>'N_DAYS'
 ,p_message_text=>'%0 days'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427962746094641286)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427962746094641286)
 ,p_name=>'N_HOUR'
 ,p_message_text=>'%0 hour'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427962944585641995)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427962944585641995)
 ,p_name=>'N_HOURS'
 ,p_message_text=>'%0 hours'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427962548251640325)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427962548251640325)
 ,p_name=>'N_MINUTES'
 ,p_message_text=>'%0 minutes'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2439926249304650437)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2439926249304650437)
 ,p_name=>'N_MONTHS'
 ,p_message_text=>'%0 months'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427963539840644198)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427963539840644198)
 ,p_name=>'N_WEEK'
 ,p_message_text=>'%0 week'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427963738546644778)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427963738546644778)
 ,p_name=>'N_WEEKS'
 ,p_message_text=>'%0 weeks'
+,p_version_scn=>16973734
 );
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2427963957512651231)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2427963957512651231)
 ,p_name=>'N_YEAR'
 ,p_message_text=>'%0 year'
+,p_version_scn=>16973734
 );
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2720299049434171971)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2720299049434171971)
 ,p_name=>'PAGES_WITH_CUSTOM_AUTH'
 ,p_message_text=>'Authorization Protected'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2720298852884170376)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2720298852884170376)
 ,p_name=>'PUBLIC_PAGES'
 ,p_message_text=>'Public Pages'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2700689837761450459)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2700689837761450459)
 ,p_name=>'STRING_USERNAME_FORMAT_MSG'
 ,p_message_text=>'This application is currently using a <strong>non-email address</strong> username format (e.g. JOHNDOE). <a href="f?p=%0:%1:%2:">Change Username Format</a>'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2368099556612814905)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2368099556612814905)
 ,p_name=>'TODAY'
 ,p_message_text=>'Today'
+,p_version_scn=>16973734
 );
-null;
-end;
-/
-begin
-wwv_flow_api.create_message(
- p_id=>wwv_flow_api.id(2575419039729264404)
+wwv_flow_imp_shared.create_message(
+ p_id=>wwv_flow_imp.id(2575419039729264404)
 ,p_name=>'USERNAME_TOO_LONG'
 ,p_message_text=>'Username too long'
+,p_version_scn=>16973734
 );
-null;
+wwv_flow_imp.component_end;
 end;
 /

@@ -1,12 +1,24 @@
 prompt --application/shared_components/navigation/lists/reports
 begin
-wwv_flow_api.create_list(
- p_id=>wwv_flow_api.id(6332843892290810451)
+--   Manifest
+--     LIST: Reports
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(6332843892290810451)
 ,p_name=>'Reports'
 ,p_list_status=>'PUBLIC'
+,p_version_scn=>16973703
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(1342742698423475065)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(1342742698423475065)
 ,p_list_item_display_sequence=>1
 ,p_list_item_link_text=>'Bugs Filed by Date'
 ,p_list_item_link_target=>'f?p=&APP_ID.:15:&SESSION.::&DEBUG.:RP:::'
@@ -15,8 +27,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'calendarIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(1414017958989749672)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(1414017958989749672)
 ,p_list_item_display_sequence=>2
 ,p_list_item_link_text=>'Bugs Fixed by Date'
 ,p_list_item_link_target=>'f?p=&APP_ID.:88:&SESSION.::&DEBUG.:RP:::'
@@ -25,8 +37,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'calendarIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(1414018796393753703)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(1414018796393753703)
 ,p_list_item_display_sequence=>3
 ,p_list_item_link_text=>'Filed vs Fixed'
 ,p_list_item_link_target=>'f?p=&APP_ID.:52:&SESSION.::&DEBUG.:RP:::'
@@ -35,8 +47,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'calendarIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(1342004813084848418)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(1342004813084848418)
 ,p_list_item_display_sequence=>7
 ,p_list_item_link_text=>'Filterable List Report'
 ,p_list_item_link_target=>'f?p=&APP_ID.:12:&SESSION.::&DEBUG.:RP:::'
@@ -45,8 +57,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'reportIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(6366388575699998062)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(6366388575699998062)
 ,p_list_item_display_sequence=>20
 ,p_list_item_link_text=>'Bugs by Assignee'
 ,p_list_item_link_target=>'f?p=&APP_ID.:22:&SESSION.::&DEBUG.:RP,38:::'
@@ -56,8 +68,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_03=>'View Chart'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(4524280850372194685)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(4524280850372194685)
 ,p_list_item_display_sequence=>50
 ,p_list_item_link_text=>'Bug Calendar'
 ,p_list_item_link_target=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.::::'
@@ -66,8 +78,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'calendarIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(2529825946334337175)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(2529825946334337175)
 ,p_list_item_display_sequence=>60
 ,p_list_item_link_text=>'Tag Cloud'
 ,p_list_item_link_target=>'f?p=&APP_ID.:7:&SESSION.::&DEBUG.::::'
@@ -76,8 +88,8 @@ wwv_flow_api.create_list_item(
 ,p_list_text_02=>'reportIcon'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(983400168932035089)
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(983400168932035089)
 ,p_list_item_display_sequence=>70
 ,p_list_item_link_text=>'Dashboard'
 ,p_list_item_link_target=>'f?p=&APP_ID.:58:&SESSION.::&DEBUG.::::'
@@ -85,5 +97,6 @@ wwv_flow_api.create_list_item(
 ,p_list_text_01=>'Bubble chart of bugs per product and other metrics'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
+wwv_flow_imp.component_end;
 end;
 /

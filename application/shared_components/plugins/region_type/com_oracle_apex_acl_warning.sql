@@ -1,11 +1,21 @@
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_acl_warning
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(1841260518245157535)
+--   Manifest
+--     PLUGIN: COM.ORACLE.APEX.ACL_WARNING
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(1841260518245157535)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.APEX.ACL_WARNING'
 ,p_display_name=>'ACL Warning'
-,p_supported_ui_types=>'DESKTOP'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.APEX.ACL_WARNING'),'')
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function render (   p_region              in apex_plugin.t_region,',
@@ -31,6 +41,7 @@ wwv_flow_api.create_plugin(
 ,p_api_version=>1
 ,p_render_function=>'render'
 ,p_substitute_attributes=>true
+,p_version_scn=>16973799
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>ACL Warning is designed for those applications that use the built-in Application Express authentication Access Control List (ACL), to control access to the application and features. The plug-in displays a warning when ACL is disabled.</p>',
@@ -38,12 +49,13 @@ wwv_flow_api.create_plugin(
 ,p_version_identifier=>'5.0.1'
 ,p_about_url=>'http://apex.oracle.com/plugins'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(2255667826112017607)
-,p_plugin_id=>wwv_flow_api.id(1841260518245157535)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(2255667826112017607)
+,p_plugin_id=>wwv_flow_imp.id(1841260518245157535)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Administration Page Link'
 ,p_attribute_type=>'LINK'
 ,p_is_required=>true
@@ -57,5 +69,9 @@ wwv_flow_api.create_plugin_attribute(
 '</p>'))
 ,p_help_text=>'<p>Enter a target page to be called when the user clicks the associated link.</p>'
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

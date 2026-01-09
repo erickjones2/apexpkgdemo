@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/media_list
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1225701339428288338)
+--   Manifest
+--     REGION TEMPLATE: MEDIA_LIST
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1225701339428288338)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-MediaList-item is-active #A04#">',
 '    <a href="#LINK#" class="t-MediaList-itemWrap #A05#" #A03#>',
@@ -46,5 +57,6 @@ wwv_flow_api.create_list_template(
 ,p_a05_label=>'Link Class'
 ,p_a06_label=>'Icon Color Class'
 );
+wwv_flow_imp.component_end;
 end;
 /

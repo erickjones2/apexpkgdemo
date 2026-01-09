@@ -1,11 +1,21 @@
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_timelinestatuslist
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(1589222718426433455)
+--   Manifest
+--     PLUGIN: COM.ORACLE.APEX.TIMELINESTATUSLIST
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.APEX.TIMELINESTATUSLIST'
 ,p_display_name=>'Timeline and Status List'
-,p_supported_ui_types=>'DESKTOP'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.APEX.TIMELINESTATUSLIST'),'#IMAGE_PREFIX#plugins/com.oracle.apex.timelinestatuslist/1.2/')
 ,p_javascript_file_urls=>'#PLUGIN_FILES#timelinestatuslist#MIN#.js'
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -609,21 +619,20 @@ wwv_flow_api.create_plugin(
 ,p_ajax_function=>'ajax'
 ,p_standard_attributes=>'SOURCE_SQL:AJAX_ITEMS_TO_SUBMIT:FETCHED_ROWS:NO_DATA_FOUND_MESSAGE:ESCAPE_OUTPUT:COLUMNS:COLUMN_HEADING'
 ,p_substitute_attributes=>true
+,p_version_scn=>16973779
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>Timeline and Status lists are useful for displaying a region with calendar dates and summary information. </p>',
 '<p>This plug-in is suitable for adding to Master / Detail pages to show important summary information with dates.</p>'))
 ,p_version_identifier=>'5.1'
 );
-end;
-/
-begin
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619040804173592536)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619040804173592536)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Group By Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -631,12 +640,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the column the report will be grouped by.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619041205790592538)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619041205790592538)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>120
+,p_static_id=>'attribute_02'
 ,p_prompt=>'Color Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -644,12 +654,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the color for the list.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619041536611592538)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619041536611592538)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
+,p_static_id=>'attribute_03'
 ,p_prompt=>'Title Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -657,12 +668,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the title for each grouping.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619041931714592539)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619041931714592539)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
+,p_static_id=>'attribute_04'
 ,p_prompt=>'Link Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -670,12 +682,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the link for each record.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619042331577592539)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619042331577592539)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
+,p_static_id=>'attribute_05'
 ,p_prompt=>'First Value'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -683,12 +696,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the first value to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619042785778592539)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619042785778592539)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
+,p_static_id=>'attribute_06'
 ,p_prompt=>'Second Value'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -696,12 +710,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the second value to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619043222319592540)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619043222319592540)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
+,p_static_id=>'attribute_07'
 ,p_prompt=>'Third Value'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -710,12 +725,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the third value to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619043608701592540)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619043608701592540)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
+,p_static_id=>'attribute_08'
 ,p_prompt=>'Fourth Value'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -724,12 +740,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the fourth value to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619043983253592540)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619043983253592540)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>9
 ,p_display_sequence=>90
+,p_static_id=>'attribute_09'
 ,p_prompt=>'Primary Description'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -737,12 +754,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the primary description to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619044337124592540)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619044337124592540)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>10
 ,p_display_sequence=>100
+,p_static_id=>'attribute_10'
 ,p_prompt=>'Secondary Description'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -751,12 +769,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the secondary description to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619044782781592541)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619044782781592541)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>11
 ,p_display_sequence=>110
+,p_static_id=>'attribute_11'
 ,p_prompt=>'Additional Description (with HTML)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -765,12 +784,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds an additional description to be displayed in the report, which allows HTML content.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619045143114592541)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619045143114592541)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>12
 ,p_display_sequence=>5
+,p_static_id=>'attribute_12'
 ,p_prompt=>'Display As'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
@@ -779,26 +799,27 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'Select whether the region should be displayed as a timeline, based on a given date, or a list.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(1619045602587592542)
-,p_plugin_attribute_id=>wwv_flow_api.id(1619045143114592541)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(1619045602587592542)
+,p_plugin_attribute_id=>wwv_flow_imp.id(1619045143114592541)
 ,p_display_sequence=>10
 ,p_display_value=>'Timeline'
 ,p_return_value=>'D'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(1619046077541592543)
-,p_plugin_attribute_id=>wwv_flow_api.id(1619045143114592541)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(1619046077541592543)
+,p_plugin_attribute_id=>wwv_flow_imp.id(1619045143114592541)
 ,p_display_sequence=>20
 ,p_display_value=>'Status List'
 ,p_return_value=>'L'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619046590198592543)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619046590198592543)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>13
 ,p_display_sequence=>20
+,p_static_id=>'attribute_13'
 ,p_prompt=>'Status Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -806,42 +827,47 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the status to be displayed in the report.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619046996444592543)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619046996444592543)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>14
 ,p_display_sequence=>140
+,p_static_id=>'attribute_14'
 ,p_prompt=>'Color Label'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
 ,p_show_in_wizard=>false
 ,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(1619041205790592538)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(1619041205790592538)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'NOT_NULL'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(1619047415529592544)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(1619047415529592544)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>15
 ,p_display_sequence=>115
+,p_static_id=>'attribute_15'
 ,p_prompt=>'Second Additional Description (with HTML)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
 ,p_is_common=>false
 ,p_column_data_types=>'VARCHAR2'
-,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds an additional description to be displayed in the report, which allows HTML content.'
 );
-wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(1619049014414592555)
-,p_plugin_id=>wwv_flow_api.id(1589222718426433455)
+wwv_flow_imp_shared.create_plugin_std_attribute(
+ p_id=>wwv_flow_imp.id(1619049014414592555)
+,p_plugin_id=>wwv_flow_imp.id(1589222718426433455)
 ,p_name=>'SOURCE_SQL'
 ,p_sql_min_column_count=>3
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

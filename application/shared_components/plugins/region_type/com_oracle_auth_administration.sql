@@ -1,11 +1,21 @@
 prompt --application/shared_components/plugins/region_type/com_oracle_auth_administration
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(1443444316772871549)
+--   Manifest
+--     PLUGIN: COM.ORACLE.AUTH_ADMINISTRATION
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(1443444316772871549)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.AUTH_ADMINISTRATION'
 ,p_display_name=>'Authorization Administration'
-,p_supported_ui_types=>'DESKTOP'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.AUTH_ADMINISTRATION'),'')
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function auth_admin (   p_region              in apex_plugin.t_region,',
@@ -109,6 +119,7 @@ wwv_flow_api.create_plugin(
 ,p_api_version=>1
 ,p_render_function=>'auth_admin'
 ,p_substitute_attributes=>true
+,p_version_scn=>16973764
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>Authorization Administration displays the current authentication scheme together with a count of public pages, pages requiring authentication, and pages with an authorization defined.</p>',
@@ -116,24 +127,26 @@ wwv_flow_api.create_plugin(
 ,p_version_identifier=>'5.0.1'
 ,p_about_url=>'http://apex.oracle.com/plugins'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(2454468281515998415)
-,p_plugin_id=>wwv_flow_api.id(1443444316772871549)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(2454468281515998415)
+,p_plugin_id=>wwv_flow_imp.id(1443444316772871549)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Page Report Page'
 ,p_attribute_type=>'PAGE NUMBER'
 ,p_is_required=>false
 ,p_is_translatable=>false
 ,p_help_text=>'Enter or select the page number which has a report listing the pages within the application and the respective role required to access that page.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(2454468661876998416)
-,p_plugin_id=>wwv_flow_api.id(1443444316772871549)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(2454468661876998416)
+,p_plugin_id=>wwv_flow_imp.id(1443444316772871549)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
+,p_static_id=>'attribute_02'
 ,p_prompt=>'Public Pages Label'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
@@ -141,12 +154,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>true
 ,p_help_text=>'Enter the label displayed for pages with no authorization defined.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(2454469052370998416)
-,p_plugin_id=>wwv_flow_api.id(1443444316772871549)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(2454469052370998416)
+,p_plugin_id=>wwv_flow_imp.id(1443444316772871549)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
+,p_static_id=>'attribute_03'
 ,p_prompt=>'Authenticated Pages Label'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
@@ -154,12 +168,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>true
 ,p_help_text=>'Enter the label displayed for pages that require authentication.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(2454469493640998416)
-,p_plugin_id=>wwv_flow_api.id(1443444316772871549)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(2454469493640998416)
+,p_plugin_id=>wwv_flow_imp.id(1443444316772871549)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
+,p_static_id=>'attribute_04'
 ,p_prompt=>'Authorized Pages Label'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
@@ -167,5 +182,9 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>true
 ,p_help_text=>'Enter the label displayed for pages where a specific authorization is defined.'
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

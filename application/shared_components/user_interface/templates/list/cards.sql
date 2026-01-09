@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/cards
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1449126688631763848)
+--   Manifest
+--     REGION TEMPLATE: CARDS
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1449126688631763848)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-Cards-item is-active #A04#">',
 '  <div class="t-Card">',
@@ -45,5 +56,6 @@ wwv_flow_api.create_list_template(
 ,p_a06_label=>'Card Color Class'
 ,p_a07_label=>'Subtitle'
 );
+wwv_flow_imp.component_end;
 end;
 /

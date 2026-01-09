@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/top_navigation_tabs
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(25576476893851050)
+--   Manifest
+--     REGION TEMPLATE: TOP_NAVIGATION_TABS
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(25576476893851050)
 ,p_list_template_current=>'<li class="t-NavTabs-item #A03# is-active" id="#A01#"><a href="#LINK#" class="t-NavTabs-link #A04# " title="#TEXT_ESC_SC#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-NavTabs-label">#TEXT_ESC_SC#</span><span class'
 ||'="t-NavTabs-badge #A05#">#A02#</span></a></li>'
 ,p_list_template_noncurrent=>'<li class="t-NavTabs-item #A03#" id="#A01#"><a href="#LINK#" class="t-NavTabs-link #A04# " title="#TEXT_ESC_SC#"><span class="t-Icon #ICON_CSS_CLASSES#" aria-hidden="true"></span><span class="t-NavTabs-label">#TEXT_ESC_SC#</span><span class="t-NavTab'
@@ -19,5 +30,6 @@ wwv_flow_api.create_list_template(
 ,p_a04_label=>'Link Class'
 ,p_a05_label=>'Badge Class'
 );
+wwv_flow_imp.component_end;
 end;
 /

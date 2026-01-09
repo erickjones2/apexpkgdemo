@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/popuplov
 begin
-wwv_flow_api.create_popup_lov_template(
- p_id=>wwv_flow_api.id(1225706132956288349)
+--   Manifest
+--     LOV TEMPLATES: 100
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_popup_lov_template(
+ p_id=>wwv_flow_imp.id(1225706132956288349)
 ,p_page_name=>'winlov'
 ,p_page_title=>'Search Dialog'
 ,p_page_html_head=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -42,5 +53,6 @@ wwv_flow_api.create_popup_lov_template(
 ,p_translate_this_template=>'N'
 ,p_after_result_set=>'</div>'
 );
+wwv_flow_imp.component_end;
 end;
 /

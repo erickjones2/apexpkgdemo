@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/page/wizard_modal_dialog
 begin
-wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(1225680452518288315)
+--   Manifest
+--     TEMPLATE: WIZARD_MODAL_DIALOG
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_template(
+ p_id=>wwv_flow_imp.id(1225680452518288315)
 ,p_theme_id=>42
 ,p_name=>'Wizard Modal Dialog'
 ,p_internal_name=>'WIZARD_MODAL_DIALOG'
@@ -131,32 +142,41 @@ wwv_flow_api.create_template(
 ,p_dialog_width=>'720'
 ,p_dialog_max_width=>'960'
 ,p_dialog_browser_frame=>'MODAL'
-,p_translate_this_template=>'N'
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517206199783598756)
-,p_page_template_id=>wwv_flow_api.id(1225680452518288315)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517206199783598756)
+,p_page_template_id=>wwv_flow_imp.id(1225680452518288315)
 ,p_name=>'Wizard Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>true
+,p_has_button_support=>true
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517206752117598756)
-,p_page_template_id=>wwv_flow_api.id(1225680452518288315)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517206752117598756)
+,p_page_template_id=>wwv_flow_imp.id(1225680452518288315)
 ,p_name=>'Wizard Progress Bar'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517207221921598756)
-,p_page_template_id=>wwv_flow_api.id(1225680452518288315)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517207221921598756)
+,p_page_template_id=>wwv_flow_imp.id(1225680452518288315)
 ,p_name=>'Wizard Buttons'
 ,p_placeholder=>'REGION_POSITION_03'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
+wwv_flow_imp.component_end;
 end;
 /

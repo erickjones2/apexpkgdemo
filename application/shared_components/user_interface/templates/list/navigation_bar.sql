@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/navigation_bar
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1706237665349397748)
+--   Manifest
+--     REGION TEMPLATE: NAVIGATION_BAR
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1706237665349397748)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-NavigationBar-item is-active #A02#">',
 '  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="#LINK#">',
@@ -39,5 +50,6 @@ wwv_flow_api.create_list_template(
 ,p_a01_label=>'Badge Value'
 ,p_a02_label=>'List  Item CSS Classes'
 );
+wwv_flow_imp.component_end;
 end;
 /

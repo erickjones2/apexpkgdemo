@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/list/wizard_progress
 begin
-wwv_flow_api.create_list_template(
- p_id=>wwv_flow_api.id(1225704044613288342)
+--   Manifest
+--     REGION TEMPLATE: WIZARD_PROGRESS
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_template(
+ p_id=>wwv_flow_imp.id(1225704044613288342)
 ,p_list_template_current=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<li class="t-WizardSteps-step is-active" id="#LIST_ITEM_ID#"><div class="t-WizardSteps-wrap" data-link="#LINK#"><span class="t-WizardSteps-marker"></span><span class="t-WizardSteps-label">#TEXT# <span class="t-WizardSteps-labelState"></span></span></'
 ||'div></li>',
@@ -20,5 +31,6 @@ wwv_flow_api.create_list_template(
 '<ul class="t-WizardSteps #COMPONENT_CSS_CLASSES#" id="#LIST_ID#">'))
 ,p_list_template_after_rows=>'</ul>'
 );
+wwv_flow_imp.component_end;
 end;
 /

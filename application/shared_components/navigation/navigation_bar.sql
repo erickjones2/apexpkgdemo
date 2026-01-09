@@ -1,7 +1,18 @@
 prompt --application/shared_components/navigation/navigation_bar
 begin
-wwv_flow_api.create_icon_bar_item(
- p_id=>wwv_flow_api.id(1232796784337365690)
+--   Manifest
+--     ICON BAR ITEMS: 100
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_icon_bar_item(
+ p_id=>wwv_flow_imp.id(1232796784337365690)
 ,p_icon_sequence=>10
 ,p_icon_subtext=>'Preferences'
 ,p_icon_target=>'f?p=&APP_ID.:43:&SESSION.::&DEBUG.::::'
@@ -9,8 +20,8 @@ wwv_flow_api.create_icon_bar_item(
 ,p_begins_on_new_line=>'NO'
 ,p_cell_colspan=>1
 );
-wwv_flow_api.create_icon_bar_item(
- p_id=>wwv_flow_api.id(1232806432835372092)
+wwv_flow_imp_shared.create_icon_bar_item(
+ p_id=>wwv_flow_imp.id(1232806432835372092)
 ,p_icon_sequence=>20
 ,p_icon_subtext=>'Mobile'
 ,p_icon_target=>'f?p=&APP_ID.:HOME_JQM_SMARTPHONE:&SESSION.::&DEBUG.:::'
@@ -18,8 +29,8 @@ wwv_flow_api.create_icon_bar_item(
 ,p_begins_on_new_line=>'NO'
 ,p_cell_colspan=>1
 );
-wwv_flow_api.create_icon_bar_item(
- p_id=>wwv_flow_api.id(1232806652783374067)
+wwv_flow_imp_shared.create_icon_bar_item(
+ p_id=>wwv_flow_imp.id(1232806652783374067)
 ,p_icon_sequence=>30
 ,p_icon_subtext=>'Help'
 ,p_icon_target=>'f?p=&APP_ID.:help:&SESSION.::&DEBUG.:::'
@@ -27,8 +38,8 @@ wwv_flow_api.create_icon_bar_item(
 ,p_begins_on_new_line=>'NO'
 ,p_cell_colspan=>1
 );
-wwv_flow_api.create_icon_bar_item(
- p_id=>wwv_flow_api.id(9940656202158052768)
+wwv_flow_imp_shared.create_icon_bar_item(
+ p_id=>wwv_flow_imp.id(9940656202158052768)
 ,p_icon_sequence=>40
 ,p_icon_subtext=>'Logout'
 ,p_icon_target=>'&LOGOUT_URL.'
@@ -43,5 +54,6 @@ wwv_flow_api.create_icon_bar_item(
 ,p_begins_on_new_line=>'NO'
 ,p_cell_colspan=>1
 );
+wwv_flow_imp.component_end;
 end;
 /

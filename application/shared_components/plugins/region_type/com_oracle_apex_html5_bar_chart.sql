@@ -1,12 +1,21 @@
--- 06/08/2025 chg 1
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_html5_bar_chart
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(2275314429205916174)
+--   Manifest
+--     PLUGIN: COM.ORACLE.APEX.HTML5_BAR_CHART
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.APEX.HTML5_BAR_CHART'
 ,p_display_name=>'HTML 5 Bar Chart'
-,p_supported_ui_types=>'DESKTOP'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.APEX.HTML5_BAR_CHART'),'#IMAGE_PREFIX#plugins/com.oracle.apex.html5_bar_chart/1.1/')
 ,p_javascript_file_urls=>'#PLUGIN_FILES#com_oracle_apex_html5_bar_chart#MIN#.js'
 ,p_css_file_urls=>'#PLUGIN_FILES#com_oracle_apex_html5_bar_chart#MIN#.css'
@@ -428,6 +437,7 @@ wwv_flow_api.create_plugin(
 ,p_ajax_function=>'AJAX'
 ,p_standard_attributes=>'SOURCE_SQL:AJAX_ITEMS_TO_SUBMIT:ESCAPE_OUTPUT'
 ,p_substitute_attributes=>false
+,p_version_scn=>17360332
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>'<p>This plugin draws horizontal bar charts containing labels, values and even icons</p>'
 ,p_version_identifier=>'5.0.1'
@@ -435,18 +445,19 @@ wwv_flow_api.create_plugin(
 ,p_plugin_comment=>'test1'
 ,p_files_version=>16
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644020009967795955)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644020009967795955)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>100
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Icon Type'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
 ,p_default_value=>'INITIALS'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644028074303795959)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644028074303795959)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'ICON'
@@ -454,36 +465,37 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Select the icon type to be displayed.'
 ,p_attribute_comment=>'test'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644020388941795956)
-,p_plugin_attribute_id=>wwv_flow_api.id(644020009967795955)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644020388941795956)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_display_sequence=>10
 ,p_display_value=>'Image'
 ,p_return_value=>'IMAGE'
 ,p_help_text=>'Displays an image HTML element on the left side of the chart.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644020957970795956)
-,p_plugin_attribute_id=>wwv_flow_api.id(644020009967795955)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644020957970795956)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_display_sequence=>20
 ,p_display_value=>'CSS Icon'
 ,p_return_value=>'ICON'
 ,p_help_text=>'Displays an icon with the given CSS class.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644021385354795956)
-,p_plugin_attribute_id=>wwv_flow_api.id(644020009967795955)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644021385354795956)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_display_sequence=>30
 ,p_display_value=>'Initials'
 ,p_return_value=>'INITIALS'
 ,p_help_text=>'Displays a colored circle containing the first two initials for each entry.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644021888984795956)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644021888984795956)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>10
+,p_static_id=>'attribute_02'
 ,p_prompt=>'Label Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -491,12 +503,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query that holds the labels for the chart.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644022351750795957)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644022351750795957)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
+,p_static_id=>'attribute_03'
 ,p_prompt=>'Label Link Target'
 ,p_attribute_type=>'LINK'
 ,p_is_required=>false
@@ -511,12 +524,13 @@ wwv_flow_api.create_plugin_attribute(
 '</p>'))
 ,p_help_text=>'<p>Enter a target page to be called when the user clicks a label.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644022667139795957)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644022667139795957)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>20
+,p_static_id=>'attribute_04'
 ,p_prompt=>'Value Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -526,12 +540,13 @@ wwv_flow_api.create_plugin_attribute(
 '<p>Select the column from the region SQL Query that holds the values for the chart.</p>',
 '<p>Note: This value is not displayed on the chart items when the chart has been configured to display the bar width percentage instead.</p>'))
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644023072825795957)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644023072825795957)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>40
+,p_static_id=>'attribute_05'
 ,p_prompt=>'Value Link Target'
 ,p_attribute_type=>'LINK'
 ,p_is_required=>false
@@ -546,62 +561,66 @@ wwv_flow_api.create_plugin_attribute(
 '</p>'))
 ,p_help_text=>'<p>Enter a target page to be called when the user clicks a value.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644023557242795957)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644023557242795957)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>190
+,p_static_id=>'attribute_06'
 ,p_prompt=>'CSS Class Names'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_is_translatable=>false
 ,p_help_text=>'<p>Enter CSS class names to be added to the root element of the chart separated with spaces.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644023953382795957)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644023953382795957)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>120
+,p_static_id=>'attribute_07'
 ,p_prompt=>'Image URL'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644020009967795955)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'IMAGE'
 ,p_help_text=>'<p>Enter the Image URL to be displayed as the chart icon. This attribute supports Substitution strings, such as query columns, <strong>&amp;IMAGE_URL.</strong>. Notice that substitutions with no value will be replaced with an empty string.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644024312244795958)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644024312244795958)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>110
+,p_static_id=>'attribute_08'
 ,p_prompt=>'Icon CSS Class Name'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644020009967795955)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'ICON'
 ,p_help_text=>'<p>Enter the Icon CSS Class Name.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644024752637795958)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644024752637795958)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>9
 ,p_display_sequence=>130
+,p_static_id=>'attribute_09'
 ,p_prompt=>'Initials Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
 ,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644020009967795955)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644020009967795955)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'INITIALS'
@@ -609,28 +628,30 @@ wwv_flow_api.create_plugin_attribute(
 '<p>Select the column from the region SQL Query that holds the initials to be displayed as an icon.</p>',
 '<p>Note: If the columns has more than two letters than the icon will includes three ellipses (...). Therefore, it is not recommended to use the label column.</p>'))
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644025139938795958)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644025139938795958)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>10
 ,p_display_sequence=>170
+,p_static_id=>'attribute_10'
 ,p_prompt=>'Custom Colors'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644030945615795961)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'IN_LIST'
 ,p_depending_on_expression=>'CUSTOM'
 ,p_help_text=>'<p>Enter a list of CSS supported colors separated by colons.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644025535838795958)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644025535838795958)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>11
 ,p_display_sequence=>50
+,p_static_id=>'attribute_11'
 ,p_prompt=>'Value Display'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
@@ -639,58 +660,61 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'<p>Select whether to display  the item value or the percentage as the right most text in the chart.</p>'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644025923011795958)
-,p_plugin_attribute_id=>wwv_flow_api.id(644025535838795958)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644025923011795958)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644025535838795958)
 ,p_display_sequence=>10
 ,p_display_value=>'Value'
 ,p_return_value=>'VALUE'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644026417026795959)
-,p_plugin_attribute_id=>wwv_flow_api.id(644025535838795958)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644026417026795959)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644025535838795958)
 ,p_display_sequence=>20
 ,p_display_value=>'Percentage'
 ,p_return_value=>'BAR_WIDTH'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644026872098795959)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644026872098795959)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>12
 ,p_display_sequence=>60
+,p_static_id=>'attribute_12'
 ,p_prompt=>'Value Prefix'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_is_translatable=>true
-,p_depending_on_attribute_id=>wwv_flow_api.id(644025535838795958)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644025535838795958)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'IN_LIST'
 ,p_depending_on_expression=>'VALUE'
 ,p_help_text=>'<p>Enter the text that prefixes the value.<p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644027273365795959)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644027273365795959)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>13
 ,p_display_sequence=>70
+,p_static_id=>'attribute_13'
 ,p_prompt=>'Value Suffix'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_is_translatable=>true
-,p_depending_on_attribute_id=>wwv_flow_api.id(644025535838795958)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644025535838795958)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'IN_LIST'
 ,p_depending_on_expression=>'VALUE'
 ,p_help_text=>'Enter the text that is appended to the value.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644027680324795959)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644027680324795959)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>14
 ,p_display_sequence=>180
+,p_static_id=>'attribute_14'
 ,p_prompt=>'Maximum Rows'
 ,p_attribute_type=>'INTEGER'
 ,p_is_required=>true
@@ -700,12 +724,13 @@ wwv_flow_api.create_plugin_attribute(
 '<p>Enter the maximum number of items to be displayed inside the region.</p>',
 '<p>Note: Bar width calculations are based on the number of items displayed.</p>'))
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644028074303795959)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644028074303795959)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>15
 ,p_display_sequence=>90
+,p_static_id=>'attribute_15'
 ,p_prompt=>'Display Type'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
@@ -714,28 +739,29 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'<p>Select how to display the chart information.</p>'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644028476733795960)
-,p_plugin_attribute_id=>wwv_flow_api.id(644028074303795959)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644028476733795960)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644028074303795959)
 ,p_display_sequence=>10
 ,p_display_value=>'Icon Chart'
 ,p_return_value=>'ICON'
 ,p_help_text=>'Displays bars with the label and value above and add an icon on the left.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644028999377795960)
-,p_plugin_attribute_id=>wwv_flow_api.id(644028074303795959)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644028999377795960)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644028074303795959)
 ,p_display_sequence=>20
 ,p_display_value=>'Text Chart'
 ,p_return_value=>'TEXT'
 ,p_help_text=>'Displays bars with the label and value either above or inline with the bar.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644029498367795960)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644029498367795960)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>16
 ,p_display_sequence=>80
+,p_static_id=>'attribute_16'
 ,p_prompt=>'Bar Width Calculation'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
@@ -744,28 +770,29 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'<p>Select how to calculate the width of the bars in the chart.</p>'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644029919850795960)
-,p_plugin_attribute_id=>wwv_flow_api.id(644029498367795960)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644029919850795960)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644029498367795960)
 ,p_display_sequence=>10
 ,p_display_value=>'Absolute'
 ,p_return_value=>'ABSOLUTE'
 ,p_help_text=>'100% bar width is represented by the maximum value displayed.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644030365544795961)
-,p_plugin_attribute_id=>wwv_flow_api.id(644029498367795960)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644030365544795961)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644029498367795960)
 ,p_display_sequence=>20
 ,p_display_value=>'Relative'
 ,p_return_value=>'RELATIVE'
 ,p_help_text=>'100% bar width is represented by the sum of the values of all the displayed chart items.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644030945615795961)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644030945615795961)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>17
 ,p_display_sequence=>150
+,p_static_id=>'attribute_17'
 ,p_prompt=>'Color Scheme'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
@@ -774,104 +801,103 @@ wwv_flow_api.create_plugin_attribute(
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'<p>Select the color scheme used to render the chart.</p>'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644031329496795961)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644031329496795961)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>5
 ,p_display_value=>'Default'
 ,p_return_value=>'DEFAULT'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644031836184795961)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644031836184795961)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>10
 ,p_display_value=>'Theme Colors'
 ,p_return_value=>'MODERN'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644032318022795962)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644032318022795962)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>20
 ,p_display_value=>'Modern 2'
 ,p_return_value=>'MODERN_2'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644032802361795962)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644032802361795962)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>30
 ,p_display_value=>'Solar'
 ,p_return_value=>'SOLAR'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644033344826795962)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644033344826795962)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>40
 ,p_display_value=>'Metro'
 ,p_return_value=>'METRO'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644033787125795962)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644033787125795962)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>50
 ,p_display_value=>'Custom'
 ,p_return_value=>'CUSTOM'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644034358019795963)
-,p_plugin_attribute_id=>wwv_flow_api.id(644030945615795961)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644034358019795963)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_display_sequence=>60
 ,p_display_value=>'SQL Query Column'
 ,p_return_value=>'COLUMN'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644034822242795963)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644034822242795963)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>18
 ,p_display_sequence=>140
+,p_static_id=>'attribute_18'
 ,p_prompt=>'Text Position'
 ,p_attribute_type=>'SELECT LIST'
 ,p_is_required=>true
 ,p_default_value=>'AROUND'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644028074303795959)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644028074303795959)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'IN_LIST'
 ,p_depending_on_expression=>'TEXT'
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'<p>Select where to display the text within the chart.</p>'
 );
-end;
-/
-begin
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644035252182795963)
-,p_plugin_attribute_id=>wwv_flow_api.id(644034822242795963)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644035252182795963)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644034822242795963)
 ,p_display_sequence=>10
 ,p_display_value=>'Above'
 ,p_return_value=>'ABOVE'
 ,p_help_text=>'The label and value are displayed above the bar, to the left and right sides of the chart.'
 );
-wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(644035680211795963)
-,p_plugin_attribute_id=>wwv_flow_api.id(644034822242795963)
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(644035680211795963)
+,p_plugin_attribute_id=>wwv_flow_imp.id(644034822242795963)
 ,p_display_sequence=>20
 ,p_display_value=>'Inline'
 ,p_return_value=>'AROUND'
 ,p_help_text=>'The label, bar, and value are all displayed in a single line.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644036166653795964)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644036166653795964)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>19
 ,p_display_sequence=>160
+,p_static_id=>'attribute_19'
 ,p_prompt=>'Colors Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
 ,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(644030945615795961)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644030945615795961)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'IN_LIST'
 ,p_depending_on_expression=>'COLUMN'
@@ -884,12 +910,13 @@ wwv_flow_api.create_plugin_attribute(
 '<p>Select the column from the region SQL Query that holds the color codes for the chart. The color can be set using hex values or as the name of the color.</p>',
 '<p>Note: If no column is entered then the color will automatically be calculated.</p>'))
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644036658749795964)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644036658749795964)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>20
 ,p_display_sequence=>200
+,p_static_id=>'attribute_20'
 ,p_prompt=>'Message When No Data Found'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
@@ -897,29 +924,34 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>true
 ,p_help_text=>'<p>Enter the message to be displayed when no data is found.</p>'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(644036969049795964)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(644036969049795964)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>21
 ,p_display_sequence=>25
+,p_static_id=>'attribute_21'
 ,p_prompt=>'Format Mask'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_show_in_wizard=>false
 ,p_is_translatable=>true
-,p_depending_on_attribute_id=>wwv_flow_api.id(644025535838795958)
+,p_depending_on_attribute_id=>wwv_flow_imp.id(644025535838795958)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'VALUE'
 ,p_examples=>'999G999G999G999G999G990'
 ,p_help_text=>'Enter a numerical format mask to apply to the value column.  You can learn more about format models here: https://docs.oracle.com/cd/B28359_01/server.111/b28286/sql_elements004.htm'
 );
-wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(644045493031795977)
-,p_plugin_id=>wwv_flow_api.id(2275314429205916174)
+wwv_flow_imp_shared.create_plugin_std_attribute(
+ p_id=>wwv_flow_imp.id(644045493031795977)
+,p_plugin_id=>wwv_flow_imp.id(2275314429205916174)
 ,p_name=>'SOURCE_SQL'
 ,p_sql_min_column_count=>1
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

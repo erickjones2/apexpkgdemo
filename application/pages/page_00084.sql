@@ -1,15 +1,25 @@
 prompt --application/pages/page_00084
 begin
-wwv_flow_api.create_page(
+--   Manifest
+--     PAGE: 00084
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_page.create_page(
  p_id=>84
-,p_user_interface_id=>wwv_flow_api.id(2333082129878819730)
 ,p_name=>'Add Multiple Users'
 ,p_page_mode=>'MODAL'
 ,p_step_title=>'Add Multiple Users'
 ,p_reload_on_submit=>'A'
 ,p_warn_on_unsaved_changes=>'N'
 ,p_autocomplete_on_off=>'ON'
-,p_group_id=>wwv_flow_api.id(2506141252046817827)
+,p_group_id=>wwv_flow_imp.id(2506141252046817827)
 ,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '.uReportList {',
 '    margin: 0;',
@@ -42,33 +52,32 @@ wwv_flow_api.create_page(
 '    background-color: #F8F8F8;',
 '    color: #404040;',
 '}'))
-,p_step_template=>wwv_flow_api.id(1225680452518288315)
+,p_step_template=>wwv_flow_imp.id(1225680452518288315)
 ,p_page_template_options=>'#DEFAULT#'
-,p_required_role=>wwv_flow_api.id(3797358846252064904)
+,p_required_role=>wwv_flow_imp.id(3797358846252064904)
 ,p_help_text=>'No help is available for this page.'
-,p_last_upd_yyyymmddhh24miss=>'20180220095950'
+,p_page_component_map=>'03'
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622523732202015926)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622523732202015926)
 ,p_plug_name=>'Bulk Load Users - Step 2'
 ,p_region_template_options=>'#DEFAULT#:t-Region--noBorder:t-Region--removeHeader'
-,p_plug_template=>wwv_flow_api.id(1225690169574288324)
+,p_plug_template=>wwv_flow_imp.id(1225690169574288324)
 ,p_plug_display_sequence=>50
-,p_plug_display_point=>'BODY'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
-,p_attribute_03=>'N'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML',
+  'show_line_breaks', 'N')).to_clob
 );
-wwv_flow_api.create_report_region(
- p_id=>wwv_flow_api.id(2622523940633015927)
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(2622523940633015927)
 ,p_name=>'Exceptions'
-,p_parent_plug_id=>wwv_flow_api.id(2622523732202015926)
-,p_template=>wwv_flow_api.id(1225686614700288321)
+,p_parent_plug_id=>wwv_flow_imp.id(2622523732202015926)
+,p_template=>wwv_flow_imp.id(1225686614700288321)
 ,p_display_sequence=>100
 ,p_region_template_options=>'#DEFAULT#:t-Region--noPadding:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--stretch:t-Report--altRowsDefault:t-Report--rowHighlight:t-Report--inline'
-,p_display_point=>'BODY'
+,p_display_point=>'SUB_REGIONS'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -78,7 +87,8 @@ wwv_flow_api.create_report_region(
 'order by 1'))
 ,p_ajax_enabled=>'Y'
 ,p_fixed_header=>'NONE'
-,p_query_row_template=>wwv_flow_api.id(1225695925336288332)
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_imp.id(1225695925336288332)
 ,p_query_num_rows=>10000
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_show_nulls_as=>' - '
@@ -92,31 +102,33 @@ wwv_flow_api.create_report_region(
 ,p_query_desc_image_attr=>'width="16" height="16" alt="" '
 ,p_plug_query_strip_html=>'Y'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(2622524241181015929)
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(2622524241181015929)
 ,p_query_column_id=>1
 ,p_column_alias=>'USERNAME'
 ,p_column_display_sequence=>1
 ,p_column_heading=>'Username'
+,p_use_as_row_header=>'N'
 ,p_heading_alignment=>'LEFT'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(2622524141512015927)
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(2622524141512015927)
 ,p_query_column_id=>2
 ,p_column_alias=>'REASON'
 ,p_column_display_sequence=>2
 ,p_column_heading=>'Why Invalid'
+,p_use_as_row_header=>'N'
 ,p_heading_alignment=>'LEFT'
 );
-wwv_flow_api.create_report_region(
- p_id=>wwv_flow_api.id(2622524330801015929)
+wwv_flow_imp_page.create_report_region(
+ p_id=>wwv_flow_imp.id(2622524330801015929)
 ,p_name=>'Users to be added to access control list'
-,p_parent_plug_id=>wwv_flow_api.id(2622523732202015926)
-,p_template=>wwv_flow_api.id(1225686614700288321)
+,p_parent_plug_id=>wwv_flow_imp.id(2622523732202015926)
+,p_template=>wwv_flow_imp.id(1225686614700288321)
 ,p_display_sequence=>90
 ,p_region_template_options=>'#DEFAULT#:t-Region--noPadding:is-expanded:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--stretch:t-Report--altRowsDefault:t-Report--rowHighlight:t-Report--inline'
-,p_display_point=>'BODY'
+,p_display_point=>'SUB_REGIONS'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -126,7 +138,8 @@ wwv_flow_api.create_report_region(
 'order by 1'))
 ,p_ajax_enabled=>'Y'
 ,p_fixed_header=>'NONE'
-,p_query_row_template=>wwv_flow_api.id(1225695925336288332)
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_imp.id(1225695925336288332)
 ,p_query_headings_type=>'QUERY_COLUMNS_INITCAP'
 ,p_query_num_rows=>10000
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -142,8 +155,8 @@ wwv_flow_api.create_report_region(
 ,p_query_desc_image_attr=>'width="16" height="16" alt="" '
 ,p_plug_query_strip_html=>'Y'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(2622524536756015929)
+wwv_flow_imp_page.create_report_columns(
+ p_id=>wwv_flow_imp.id(2622524536756015929)
 ,p_query_column_id=>1
 ,p_column_alias=>'USERNAME'
 ,p_column_display_sequence=>1
@@ -154,152 +167,149 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622524652660015929)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622524652660015929)
 ,p_plug_name=>'Hidden Items'
 ,p_plug_display_sequence=>10
-,p_plug_display_point=>'BODY'
 ,p_plug_query_headings_type=>'QUERY_COLUMNS'
 ,p_plug_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_query_show_nulls_as=>' - '
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
-,p_attribute_03=>'N'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML',
+  'show_line_breaks', 'N')).to_clob
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622525451187015930)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622525451187015930)
 ,p_plug_name=>'No Valid Users Exist - Page Info'
 ,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(1225683798473288318)
+,p_plug_template=>wwv_flow_imp.id(1225683798473288318)
 ,p_plug_display_sequence=>40
-,p_plug_display_point=>'BODY'
 ,p_plug_source=>'<p>The username list on the previous page found no valid usernames and &P84_INVALID_COUNT. invalid ones. Please go back and verify the username list you provided.</p>'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_display_condition_type=>'NOT_EXISTS'
 ,p_plug_display_when_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select 1',
 '  from apex_collections',
 ' where collection_name = ''EBA_BT_BULK_USER_VALID'''))
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
-,p_attribute_03=>'N'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML',
+  'show_line_breaks', 'N')).to_clob
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622525656867015930)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622525656867015930)
 ,p_plug_name=>'Wizard Buttons'
 ,p_region_template_options=>'#DEFAULT#:t-ButtonRegion--noUI'
-,p_plug_template=>wwv_flow_api.id(1225684792970288320)
+,p_plug_template=>wwv_flow_imp.id(1225684792970288320)
 ,p_plug_display_sequence=>80
 ,p_plug_display_point=>'REGION_POSITION_03'
 ,p_plug_query_num_rows=>15
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
-,p_attribute_03=>'N'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'expand_shortcuts', 'N',
+  'output_as', 'HTML',
+  'show_line_breaks', 'N')).to_clob
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622526647051015931)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622526647051015931)
 ,p_plug_name=>'Valid Count'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'Y'
-,p_plug_template=>wwv_flow_api.id(1225683798473288318)
+,p_plug_template=>wwv_flow_imp.id(1225683798473288318)
 ,p_plug_display_sequence=>20
-,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select :P84_VALID_COUNT valid_count, :P84_ROLE role',
 'from dual'))
 ,p_plug_source_type=>'PLUGIN_COM.ORACLE.APEX.TRANSLATED_MESSAGE'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_display_condition_type=>'EXISTS'
 ,p_plug_display_when_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select 1',
 'from apex_collections',
 'where collection_name = ''EBA_BT_BULK_USER_VALID''',
 '    and :P84_INVALID_COUNT = 0'))
-,p_attribute_01=>'ABOUT_TO_CREATE'
-,p_attribute_02=>'VALID_COUNT'
-,p_attribute_03=>'ROLE'
-,p_attribute_12=>'Y'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'attribute_01', 'ABOUT_TO_CREATE',
+  'attribute_02', 'VALID_COUNT',
+  'attribute_03', 'ROLE',
+  'attribute_12', 'Y')).to_clob
 );
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(2622526831779015931)
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(2622526831779015931)
 ,p_plug_name=>'Invalid Users'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'Y'
-,p_plug_template=>wwv_flow_api.id(1225683798473288318)
+,p_plug_template=>wwv_flow_imp.id(1225683798473288318)
 ,p_plug_display_sequence=>30
-,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select :P84_VALID_COUNT valid_count,',
 '    :P84_ROLE role,',
 '    :P84_INVALID_COUNT invalid_count',
 'from dual'))
 ,p_plug_source_type=>'PLUGIN_COM.ORACLE.APEX.TRANSLATED_MESSAGE'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_plug_display_condition_type=>'EXISTS'
 ,p_plug_display_when_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select 1',
 'from apex_collections',
 'where collection_name = ''EBA_BT_BULK_USER_VALID''',
 '    and :P84_INVALID_COUNT > 0'))
-,p_attribute_01=>'ABOUT_TO_CREATE_WITH_INVALIDS'
-,p_attribute_02=>'VALID_COUNT'
-,p_attribute_03=>'ROLE'
-,p_attribute_04=>'INVALID_COUNT'
-,p_attribute_12=>'Y'
+,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
+  'attribute_01', 'ABOUT_TO_CREATE_WITH_INVALIDS',
+  'attribute_02', 'VALID_COUNT',
+  'attribute_03', 'ROLE',
+  'attribute_04', 'INVALID_COUNT',
+  'attribute_12', 'Y')).to_clob
 );
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(2622526246338015930)
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(2622526246338015930)
 ,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(2622525656867015930)
+,p_button_plug_id=>wwv_flow_imp.id(2622525656867015930)
 ,p_button_name=>'FINISH'
 ,p_button_action=>'SUBMIT'
 ,p_button_template_options=>'#DEFAULT#:t-Button--gapLeft'
-,p_button_template_id=>wwv_flow_api.id(1225705764797288347)
+,p_button_template_id=>wwv_flow_imp.id(1225705764797288347)
 ,p_button_is_hot=>'Y'
 ,p_button_image_alt=>'Add Users'
-,p_button_position=>'REGION_TEMPLATE_CREATE'
+,p_button_position=>'CREATE'
+,p_button_alignment=>'RIGHT'
 ,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select 1',
 '  from apex_collections',
 ' where collection_name = ''EBA_BT_BULK_USER_VALID'''))
 ,p_button_condition_type=>'EXISTS'
-,p_grid_new_grid=>false
 );
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(2622525834301015930)
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(2622525834301015930)
 ,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(2622525656867015930)
+,p_button_plug_id=>wwv_flow_imp.id(2622525656867015930)
 ,p_button_name=>'CANCEL'
 ,p_button_action=>'DEFINED_BY_DA'
 ,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(1225705764797288347)
+,p_button_template_id=>wwv_flow_imp.id(1225705764797288347)
 ,p_button_image_alt=>'Cancel'
-,p_button_position=>'REGION_TEMPLATE_EDIT'
+,p_button_position=>'EDIT'
+,p_button_alignment=>'RIGHT'
 ,p_warn_on_unsaved_changes=>null
-,p_grid_new_grid=>false
-,p_security_scheme=>wwv_flow_api.id(3797358846252064904)
+,p_security_scheme=>wwv_flow_imp.id(3797358846252064904)
 );
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(2622526050261015930)
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(2622526050261015930)
 ,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(2622525656867015930)
+,p_button_plug_id=>wwv_flow_imp.id(2622525656867015930)
 ,p_button_name=>'PREVIOUS'
 ,p_button_action=>'REDIRECT_URL'
 ,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(1225705056775288345)
+,p_button_template_id=>wwv_flow_imp.id(1225705056775288345)
 ,p_button_image_alt=>'Previous'
-,p_button_position=>'REGION_TEMPLATE_PREVIOUS'
+,p_button_position=>'PREVIOUS'
+,p_button_alignment=>'RIGHT'
 ,p_button_redirect_url=>'javascript:history.back();'
 ,p_icon_css_classes=>'fa-chevron-left'
-,p_grid_new_grid=>false
 );
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(2622524847554015929)
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(2622524847554015929)
 ,p_name=>'P84_ROLE'
 ,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(2622524652660015929)
+,p_item_plug_id=>wwv_flow_imp.id(2622524652660015929)
 ,p_use_cache_before_default=>'NO'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'if :P83_ROLE = 3 then',
@@ -310,14 +320,16 @@ wwv_flow_api.create_page_item(
 '    return ''Reader'';',
 'end if;'))
 ,p_source_type=>'FUNCTION_BODY'
+,p_source_language=>'PLSQL'
 ,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'Y'
 );
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(2622525028093015929)
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(2622525028093015929)
 ,p_name=>'P84_VALID_COUNT'
 ,p_item_sequence=>20
-,p_item_plug_id=>wwv_flow_api.id(2622524652660015929)
+,p_item_plug_id=>wwv_flow_imp.id(2622524652660015929)
 ,p_use_cache_before_default=>'NO'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select count(*)',
@@ -325,13 +337,14 @@ wwv_flow_api.create_page_item(
 ' where collection_name = ''EBA_BT_BULK_USER_VALID'''))
 ,p_source_type=>'QUERY'
 ,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'Y'
 );
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(2622525242642015930)
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(2622525242642015930)
 ,p_name=>'P84_INVALID_COUNT'
 ,p_item_sequence=>30
-,p_item_plug_id=>wwv_flow_api.id(2622524652660015929)
+,p_item_plug_id=>wwv_flow_imp.id(2622524652660015929)
 ,p_use_cache_before_default=>'NO'
 ,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select count(*)',
@@ -339,28 +352,29 @@ wwv_flow_api.create_page_item(
 ' where collection_name = ''EBA_BT_BULK_USER_INVALID'''))
 ,p_source_type=>'QUERY'
 ,p_display_as=>'NATIVE_HIDDEN'
+,p_encrypt_session_state_yn=>'N'
 ,p_attribute_01=>'Y'
 );
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(1103797468815068160)
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(1103797468815068160)
 ,p_name=>'Cancel Dialog'
 ,p_event_sequence=>10
 ,p_triggering_element_type=>'BUTTON'
-,p_triggering_button_id=>wwv_flow_api.id(2622525834301015930)
+,p_triggering_button_id=>wwv_flow_imp.id(2622525834301015930)
 ,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
 ,p_bind_event_type=>'click'
 );
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(1103797576743068161)
-,p_event_id=>wwv_flow_api.id(1103797468815068160)
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(1103797576743068161)
+,p_event_id=>wwv_flow_imp.id(1103797468815068160)
 ,p_event_result=>'TRUE'
 ,p_action_sequence=>10
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_DIALOG_CANCEL'
-,p_stop_execution_on_error=>'Y'
 );
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(2622527353484015932)
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(2622527353484015932)
 ,p_process_sequence=>10
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
@@ -389,18 +403,23 @@ wwv_flow_api.create_page_process(
 'wwv_flow_collection.DELETE_COLLECTION(''EBA_BT_BULK_USER_INVALID'');',
 'wwv_flow_collection.DELETE_COLLECTION(''EBA_BT_BULK_USER_VALID'');',
 'wwv_flow_collection.DELETE_COLLECTION(''EBA_BT_BULK_USER_CREATE'');'))
+,p_process_clob_language=>'PLSQL'
 ,p_process_error_message=>'#SQLERRM#'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_api.id(2622526246338015930)
+,p_process_when_button_id=>wwv_flow_imp.id(2622526246338015930)
 ,p_process_success_message=>'User(s) added.'
+,p_internal_uid=>2622527353484015932
 );
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(1103797698623068162)
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(1103797698623068162)
 ,p_process_sequence=>20
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_CLOSE_WINDOW'
 ,p_process_name=>'Close Dialog'
+,p_attribute_02=>'N'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_internal_uid=>1103797698623068162
 );
+wwv_flow_imp.component_end;
 end;
 /

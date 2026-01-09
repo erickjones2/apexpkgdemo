@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/page/standard
 begin
-wwv_flow_api.create_template(
- p_id=>wwv_flow_api.id(1225652808464288287)
+--   Manifest
+--     TEMPLATE: STANDARD
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_template(
+ p_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_theme_id=>42
 ,p_name=>'Standard'
 ,p_internal_name=>'STANDARD'
@@ -180,67 +191,88 @@ wwv_flow_api.create_template(
 ,p_dialog_js_close_code=>'apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);'
 ,p_dialog_js_cancel_code=>'apex.navigation.dialog.cancel(#IS_MODAL#);'
 ,p_dialog_browser_frame=>'MODAL'
-,p_translate_this_template=>'N'
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517200938064598752)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517200938064598752)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Content Body'
 ,p_placeholder=>'BODY'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>true
+,p_has_button_support=>true
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517201424259598753)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517201424259598753)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Breadcrumb Bar'
 ,p_placeholder=>'REGION_POSITION_01'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517201881414598753)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517201881414598753)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Inline Dialogs'
 ,p_placeholder=>'REGION_POSITION_04'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517202437276598753)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517202437276598753)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Footer'
 ,p_placeholder=>'REGION_POSITION_05'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517202949400598753)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517202949400598753)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Page Navigation'
 ,p_placeholder=>'REGION_POSITION_06'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517203416760598753)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517203416760598753)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Page Header'
 ,p_placeholder=>'REGION_POSITION_07'
 ,p_has_grid_support=>false
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 );
-wwv_flow_api.create_page_tmpl_display_point(
- p_id=>wwv_flow_api.id(517203896104598754)
-,p_page_template_id=>wwv_flow_api.id(1225652808464288287)
+wwv_flow_imp_shared.create_page_tmpl_display_point(
+ p_id=>wwv_flow_imp.id(517203896104598754)
+,p_page_template_id=>wwv_flow_imp.id(1225652808464288287)
 ,p_name=>'Before Content Body'
 ,p_placeholder=>'REGION_POSITION_08'
 ,p_has_grid_support=>true
+,p_has_region_support=>true
+,p_has_item_support=>false
+,p_has_button_support=>false
 ,p_glv_new_row=>true
 ,p_max_fixed_grid_columns=>12
 );
+wwv_flow_imp.component_end;
 end;
 /

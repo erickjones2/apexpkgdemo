@@ -1,11 +1,21 @@
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_translated_message
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(2622506247595990774)
+--   Manifest
+--     PLUGIN: COM.ORACLE.APEX.TRANSLATED_MESSAGE
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.APEX.TRANSLATED_MESSAGE'
 ,p_display_name=>'Translated Message'
-,p_supported_ui_types=>'DESKTOP:JQM_SMARTPHONE'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.APEX.TRANSLATED_MESSAGE'),'')
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function render (',
@@ -105,30 +115,33 @@ wwv_flow_api.create_plugin(
 ,p_render_function=>'render'
 ,p_standard_attributes=>'SOURCE_SQL:ESCAPE_OUTPUT'
 ,p_substitute_attributes=>true
+,p_version_scn=>16973799
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>This region plug-in is used to allow text messages to readily be translated into different languages. Up to nine values can be substituted into the text message.</p>',
 '<p>The text message, with appropriate substitution variables, must be defined as a system message.</p>'))
 ,p_version_identifier=>'5.0.1'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865711142654824133)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865711142654824133)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Text Message'
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
 ,p_is_translatable=>false
 ,p_help_text=>'Enter the name of the Text Message (from shared components) to be displayed.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865711461659824133)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865711461659824133)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
+,p_static_id=>'attribute_02'
 ,p_prompt=>'Substitution Column 0 (%0)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -136,12 +149,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%0</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865711836165824133)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865711836165824133)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
+,p_static_id=>'attribute_03'
 ,p_prompt=>'Substitution Column 1 (%1)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -149,12 +163,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%1</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865712328962824134)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865712328962824134)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
+,p_static_id=>'attribute_04'
 ,p_prompt=>'Substitution Column 2 (%2)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -162,12 +177,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%2</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865712703360824134)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865712703360824134)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
+,p_static_id=>'attribute_05'
 ,p_prompt=>'Substitution Column 3 (%3)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -175,12 +191,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%3</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865713093189824134)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865713093189824134)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
+,p_static_id=>'attribute_06'
 ,p_prompt=>'Substitution Column 4 (%4)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -188,12 +205,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%4</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865713440344824137)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865713440344824137)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
+,p_static_id=>'attribute_07'
 ,p_prompt=>'Substitution Column 5 (%5)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -201,12 +219,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%5</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865713843042824137)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865713843042824137)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
+,p_static_id=>'attribute_08'
 ,p_prompt=>'Substitution Column 6 (%6)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -214,12 +233,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%6</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865714308555824137)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865714308555824137)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>9
 ,p_display_sequence=>90
+,p_static_id=>'attribute_09'
 ,p_prompt=>'Substitution Column 7 (%7)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -227,12 +247,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%7</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865714641397824137)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865714641397824137)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>10
 ,p_display_sequence=>100
+,p_static_id=>'attribute_10'
 ,p_prompt=>'Substitution Column 8 (%8)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -240,12 +261,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%8</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865715035592824138)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865715035592824138)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>11
 ,p_display_sequence=>110
+,p_static_id=>'attribute_11'
 ,p_prompt=>'Substitution Column 9 (%9)'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>false
@@ -253,12 +275,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which is used to replace any <strong>%9</strong> values in the displayed message.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(3865715496986824138)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(3865715496986824138)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>12
 ,p_display_sequence=>120
+,p_static_id=>'attribute_12'
 ,p_prompt=>'Add Paragraph Tags'
 ,p_attribute_type=>'CHECKBOX'
 ,p_is_required=>false
@@ -268,13 +291,17 @@ wwv_flow_api.create_plugin_attribute(
 '<p>Select whether paragraph tags are added around the text message.</p>',
 '<p>Note: If the message already starts with a paragraph tag, no changes are made.</p>'))
 );
-wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(3865719140554824163)
-,p_plugin_id=>wwv_flow_api.id(2622506247595990774)
+wwv_flow_imp_shared.create_plugin_std_attribute(
+ p_id=>wwv_flow_imp.id(3865719140554824163)
+,p_plugin_id=>wwv_flow_imp.id(2622506247595990774)
 ,p_name=>'SOURCE_SQL'
 ,p_is_required=>false
 ,p_sql_min_column_count=>1
 ,p_examples=>'This SQL is optional. If the message you are translating has substitutions built in (%0 through %9), select the values you wish to replace them with within Attributes.'
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

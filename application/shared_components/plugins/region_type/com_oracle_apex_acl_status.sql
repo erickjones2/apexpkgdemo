@@ -1,11 +1,21 @@
 prompt --application/shared_components/plugins/region_type/com_oracle_apex_acl_status
 begin
-wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(1420949892734457673)
+--   Manifest
+--     PLUGIN: COM.ORACLE.APEX.ACL_STATUS
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_plugin(
+ p_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_plugin_type=>'REGION TYPE'
 ,p_name=>'COM.ORACLE.APEX.ACL_STATUS'
 ,p_display_name=>'ACL Status'
-,p_supported_ui_types=>'DESKTOP'
 ,p_image_prefix => nvl(wwv_flow_application_install.get_static_plugin_file_prefix('REGION TYPE','COM.ORACLE.APEX.ACL_STATUS'),'')
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function acl_status (   p_region              in apex_plugin.t_region,',
@@ -172,6 +182,7 @@ wwv_flow_api.create_plugin(
 ,p_render_function=>'acl_status'
 ,p_standard_attributes=>'SOURCE_SQL'
 ,p_substitute_attributes=>true
+,p_version_scn=>16973739
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<p>ACL Status is designed for those applications that use the built-in Application Express authentication Access Control List (ACL), to control access to the application and features. The plug-in displays the current ACL status together with a count '
@@ -180,36 +191,39 @@ wwv_flow_api.create_plugin(
 ,p_version_identifier=>'5.0.1'
 ,p_about_url=>'http://apex.oracle.com/plugins'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080425202316607503)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080425202316607503)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
+,p_static_id=>'attribute_01'
 ,p_prompt=>'Configuration Page'
 ,p_attribute_type=>'PAGE NUMBER'
 ,p_is_required=>true
 ,p_is_translatable=>false
 ,p_help_text=>'Enter the application page number used to maintain the ACL settings.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080425597353607504)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080425597353607504)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
+,p_static_id=>'attribute_02'
 ,p_prompt=>'ACL Page'
 ,p_attribute_type=>'PAGE NUMBER'
 ,p_is_required=>true
 ,p_is_translatable=>false
 ,p_help_text=>'Enter the application page number used to maintain users and their access level.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080425967937607504)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080425967937607504)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
+,p_static_id=>'attribute_03'
 ,p_prompt=>'Administrator Count Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -217,12 +231,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which holds the count of Administrators.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080426416923607504)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080426416923607504)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
+,p_static_id=>'attribute_04'
 ,p_prompt=>'Contributor Count Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -230,12 +245,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which holds the count of Contributors.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080426828142607504)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080426828142607504)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
+,p_static_id=>'attribute_05'
 ,p_prompt=>'Reader Count Column'
 ,p_attribute_type=>'REGION SOURCE COLUMN'
 ,p_is_required=>true
@@ -243,12 +259,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_help_text=>'Select the column from the region SQL Query which holds the count of Readers.'
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080427204379607505)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080427204379607505)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
+,p_static_id=>'attribute_06'
 ,p_prompt=>'Scope Preference Value'
 ,p_attribute_type=>'PLSQL EXPRESSION'
 ,p_is_required=>true
@@ -263,12 +280,13 @@ wwv_flow_api.create_plugin_attribute(
 '  <dt>PUBLIC_READONLY</dt><dd>Public users can access the application, but cannot update records.</dd>',
 '</dl>'))
 );
-wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(4080427605005607505)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(4080427605005607505)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
+,p_static_id=>'attribute_07'
 ,p_prompt=>'ACL Enabled Preference'
 ,p_attribute_type=>'PLSQL EXPRESSION'
 ,p_is_required=>true
@@ -276,9 +294,9 @@ wwv_flow_api.create_plugin_attribute(
 ,p_examples=>'eba_plugin_fw.get_preference_value(''ACCESS_CONTROL_ENABLED'')'
 ,p_help_text=>'<p>Enter a function which returns if ACL is currently enabled or disabled.</p>'
 );
-wwv_flow_api.create_plugin_std_attribute(
- p_id=>wwv_flow_api.id(4080428602313607507)
-,p_plugin_id=>wwv_flow_api.id(1420949892734457673)
+wwv_flow_imp_shared.create_plugin_std_attribute(
+ p_id=>wwv_flow_imp.id(4080428602313607507)
+,p_plugin_id=>wwv_flow_imp.id(1420949892734457673)
 ,p_name=>'SOURCE_SQL'
 ,p_sql_min_column_count=>3
 ,p_examples=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -287,5 +305,9 @@ wwv_flow_api.create_plugin_std_attribute(
 ',      sum(case when access_level_id = 3 then 1 else 0 end) admin_count',
 'from eba_plugin_users'))
 );
+end;
+/
+begin
+wwv_flow_imp.component_end;
 end;
 /

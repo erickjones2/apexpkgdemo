@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/templates/breadcrumb/breadcrumb
 begin
-wwv_flow_api.create_menu_template(
- p_id=>wwv_flow_api.id(1225705996474288347)
+--   Manifest
+--     MENU TEMPLATE: BREADCRUMB
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_menu_template(
+ p_id=>wwv_flow_imp.id(1225705996474288347)
 ,p_name=>'Breadcrumb'
 ,p_internal_name=>'BREADCRUMB'
 ,p_before_first=>'<ul class="t-Breadcrumb #COMPONENT_CSS_CLASSES#">'
@@ -14,5 +25,6 @@ wwv_flow_api.create_menu_template(
 ,p_theme_class_id=>1
 ,p_translate_this_template=>'N'
 );
+wwv_flow_imp.component_end;
 end;
 /

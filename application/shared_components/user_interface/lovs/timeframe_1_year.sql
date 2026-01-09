@@ -1,7 +1,18 @@
 prompt --application/shared_components/user_interface/lovs/timeframe_1_year
 begin
-wwv_flow_api.create_list_of_values(
- p_id=>wwv_flow_api.id(4267638034951118079)
+--   Manifest
+--     TIMEFRAME (1 YEAR)
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.0'
+,p_default_workspace_id=>110000
+,p_default_application_id=>100
+,p_default_id_offset=>0
+,p_default_owner=>'NICE'
+);
+wwv_flow_imp_shared.create_list_of_values(
+ p_id=>wwv_flow_imp.id(4267638034951118079)
 ,p_lov_name=>'TIMEFRAME (1 YEAR)'
 ,p_lov_query=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select wwv_flow_lang.system_message(''N_MINUTES'',''15'') d, trim(to_char(15/(24*60),''00000.99999999999'',''NLS_NUMERIC_CHARACTERS=''''.,'''''')) t from dual',
@@ -54,6 +65,10 @@ wwv_flow_api.create_list_of_values(
 'union all ',
 'select wwv_flow_lang.system_message(''N_YEAR'',''1'') d, trim(to_char(365,''00000.9999999999'')) t from dual',
 'order by 2'))
+,p_source_type=>'LEGACY_SQL'
+,p_location=>'LOCAL'
+,p_version_scn=>16973710
 );
+wwv_flow_imp.component_end;
 end;
 /
